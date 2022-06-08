@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Salary Analysis</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+        <input type="text" name="state" placeholder="State" required="required" />
+        <input type="text" name="account_length" placeholder="account_length" required="required" />
+		<input type="text" name="international_plan" placeholder="international_plan" required="required" />
+        <input type="text" name="voice_mail_plan" placeholder="voice_mail_plan" required="required" />
+        <input type="text" name="number_vmail_messages" placeholder="number_vmail_messages" required="required" />
+        <input type="text" name="total_day_minutes" placeholder="total_day_minutes" required="required" />
+        <input type="text" name="total_day_calls" placeholder="total_day_calls" required="required" />
+        <input type="text" name="total_eve_minutes" placeholder="total_eve_minutes" required="required" />
+        <input type="text" name="total_eve_calls" placeholder="total_eve_calls" required="required" />
+        <input type="text" name="total_night_minutes" placeholder="total_night_minutes" required="required" />
+        <input type="text" name="total_night_calls" placeholder="total_night_calls" required="required" />
+        <input type="text" name="total_intl_minutes" placeholder="total_intl_minutes" required="required" />
+        <input type="text" name="total_intl_calls" placeholder="total_intl_calls" required="required" />
+        <input type="text" name="number_customer_service_calls" placeholder="number_customer_service_calls" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
